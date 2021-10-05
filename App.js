@@ -5,10 +5,10 @@ import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 export default function App() {
   
   return (
-    <View style={{padding:30}}>
+    <View style={styles.screen}>
 
-      <View style={{flexDirection:"row", justifyContent:"space-evenly", alignItems:"center"}}>
-        <TextInput placeholder="Course Goal" style={{marginTop:30,  width:"80%", marginBottom:10, borderBottomColor:"black", borderBottomWidth:1}} />
+      <View style={styles.inputBtnStyle}>
+        <TextInput placeholder="Course Goal" style={styles.inputStyle} />
         <Button title="+" style={{with:"10%"}} />
       </View>
 
@@ -19,5 +19,27 @@ export default function App() {
     </View>
   );
 }
+
+
+const styles = StyleSheet.create({
+  screen:{
+    padding:30,
+  },
+
+  inputBtnStyle:{
+    flexDirection:"row",
+    justifyContent:"space-evenly",
+    alignItems:"center"
+  },
+
+  inputStyle:{
+    marginTop:30,
+    width:"80%",
+    marginBottom:10,
+    borderBottomColor:"black",
+    borderBottomWidth:1
+  }
+
+});
 
 

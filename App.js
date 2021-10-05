@@ -3,21 +3,12 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-  const [outputText, setoutPutText] = useState('Open up App.js to start working on your app!')
+  
   return (
-    <View style={styles.container}>
-      <Text>{outputText}</Text>
-      <Button title="Change Text" onPress={()=>setoutPutText("Text his been changed!")} />
-      <StatusBar style="auto" />
+    <View>
+      
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+

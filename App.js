@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 export default function App() {
   const [goal, setGoal] = useState('')
@@ -23,17 +24,17 @@ export default function App() {
         <Button title="+" style={{with:"10%"}} onPress={addGoalHandler} />
       </View>
 
-      <View>
+     
         
           {
-            courseGoal.map((item) =>{
-              return(
-                <Text> {item}</Text>
-              )
-            })
+            courseGoal.map((item) =>( <View key={item} style={styles.listItem}> 
+            <Text style={styles.textColor}> {item} </Text> 
+            </View>)
+             
+            )
           }
         
-      </View>
+  
       
     </View>
   );
@@ -57,7 +58,18 @@ const styles = StyleSheet.create({
     marginBottom:10,
     borderBottomColor:"black",
     borderBottomWidth:1
+  },
+
+  listItem:{
+    padding:10,
+    backgroundColor:"#e67e22",
+    marginVertical:10,
+  },
+
+  textColor:{
+    color:"white",
   }
+
 
 });
 

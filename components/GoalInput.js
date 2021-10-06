@@ -13,7 +13,7 @@ const GoalInput = (props) => {
     return(
         <View style={styles.inputBtnStyle}>
             <TextInput placeholder="Course Goal" value={goal} style={styles.inputStyle} onChangeText={goalInputHandler} />
-            <Button title="+" style={{with:"10%"}} onPress={() => props.funData(goal)} />
+            <Button title="+" onPress={() => props.goalHandler(goal)} />
         </View>
     )
 }

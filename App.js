@@ -11,16 +11,25 @@ export default function App() {
   const addGoalHandler = (goal) =>{
     setCourseGoal(currentGoal => [...currentGoal, {key: Math.random().toString(), value: goal}])
   }
+
+  const RemoveGoalHandler = (goalId) =>{
+
+    console.log("delete",goalId)
+    setCourseGoal(courseGoal => {
+      return courseGoal.filter((goal) => goal.key !== goalId)
+    }); 
+    
+    }
   
   return (
     
     <View style={styles.screen}>
 
-        <GoalInput funData={addGoalHandler} />
+        <GoalInput goalHandler={addGoalHandler} />
 
 
         <FlatList data={courseGoal} renderItem={itemData =>(
-          <GoalView  data={itemData.item.value} />
+          <GoalView  data={itemData.item.value} onDelete={RemoveGoalHandler.bind(this, itemData.item.key)} />
         )} />
 
         

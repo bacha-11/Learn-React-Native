@@ -15,6 +15,10 @@ export default function App() {
     setIsModal(false)
   }
 
+  const handleCancel = () =>{
+    setIsModal(false)
+  }
+
 
   const RemoveGoalHandler = (goalId) =>{
     setCourseGoal(courseGoal => {
@@ -30,7 +34,7 @@ export default function App() {
 
         <Button title="Add New Title" onPress={() => setIsModal(true) } />
 
-        <GoalInput goalHandler={addGoalHandler} visible={isModal} />
+        <GoalInput goalHandler={addGoalHandler} visible={isModal} cancel={handleCancel} />
 
 
         <FlatList data={courseGoal} renderItem={itemData =>(
